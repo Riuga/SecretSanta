@@ -1,0 +1,30 @@
+#root {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #c9476e;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.btn {
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 5px;
+  background-color: aliceblue;
+  text-decoration: none;
+  color: black;
+}

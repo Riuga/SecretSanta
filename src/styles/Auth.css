@@ -1,0 +1,20 @@
+.auth {
+  margin-top: 25%;
+}
+
+.auth-form,
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.change-form-btn {
+  background: none;
+  text-decoration: underline;
+}
