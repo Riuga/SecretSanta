@@ -57,7 +57,9 @@ function Signup(props: AuthProps) {
           placeholder="********"
           onChange={handleChange}
         ></input>
-        <button type="submit" className='btn'>Sign Up</button>
+        <button type="submit" className="btn">
+          Sign Up
+        </button>
       </form>
       <button
         className="change-form-btn"

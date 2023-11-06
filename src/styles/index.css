@@ -7,3 +7,9 @@ body {
   background-color: #c9baa6;
   color: #111519;
 }
+
+@font-face {
+  font-family: 'BeyondWonderland';
+  src: local('BeyondWonderland'),
+    url('public/fonts/ThriveXmas') format('truetype');
+}

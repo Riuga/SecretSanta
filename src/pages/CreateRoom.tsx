@@ -20,7 +20,7 @@ function CreateRoom() {
 
   return (
     <>
-      <Header title="Create room" username="Riuga" />
+      <Header title="CREATE ROOM" username="Riuga" />
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           type="text"

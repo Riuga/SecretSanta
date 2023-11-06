@@ -19,7 +19,7 @@ function JoinRoom() {
 
   return (
     <>
-      <Header title="Join room" username="" />
+      <Header title="JOIN ROOM" username="" />
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -37,7 +37,9 @@ function JoinRoom() {
           placeholder="Enter your wishes"
           onChange={handleChange}
         ></input>
-        <button type="submit" className='btn'>Join room</button>
+        <button type="submit" className="btn">
+          Join room
+        </button>
       </form>
     </>
   )
