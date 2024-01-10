@@ -5,22 +5,26 @@ export const login = async (email: string, password: string) => {
     const response = await axios.post(
       "/api/v1/auth/email/login",
       JSON.stringify({ email, password }),
-      { headers: { "Content-Type": "application/json" }, withCredentials: true }
+      {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: false,
+      }
     );
     // console.log(JSON.stringify(response?.data));
     console.log(JSON.stringify(response));
-    return response
+    return response;
   } catch (err) {
     if (!err) {
-      return 'Error'
+      return "Error";
+    }
   }
-}};
+};
 
 export const signup = async (email: string, password: string) => {
   const response = await axios.post(
     "/api/v1/auth/email/register",
     JSON.stringify({ email, password }),
-    { headers: { "Content-Type": "application/json" }, withCredentials: true }
+    { headers: { "Content-Type": "application/json" }, withCredentials: false }
   );
   return response;
 };
