@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom'
 import Header from '../components/UI/Header/Header'
 import '../styles/RoomsList.css'
+import { CreateIcon } from '../assets/CreateIcon'
+import { JoinIcon } from '../assets/JoinIcon'
 
 function RoomsList() {
   return (
     <>
       <Header title="ROOMS LIST" username="" />
-      <div className="buttons">
-        <Link to={'/create'} className="btn">
-          Create room
+      <div>
+        <Link to={'/create'} >
+          <CreateIcon />
         </Link>
-        <Link to={'/join'} className="btn">
-          Join room
+        <Link to={'/join'}>
+          <JoinIcon />
         </Link>
       </div>
     </>

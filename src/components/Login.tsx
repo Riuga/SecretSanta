@@ -1,5 +1,6 @@
 import { FormEventHandler, useState } from 'react'
 import { AuthProps } from '../utils/interfaces'
+import { login } from '../api/AuthService'
 
 function Login(props: AuthProps) {
   const [formInputs, setFormInputs] = useState({
@@ -9,6 +10,7 @@ function Login(props: AuthProps) {
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
+    login(formInputs.email, formInputs.password)
   }
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {

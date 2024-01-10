@@ -1,4 +1,5 @@
-.buttons {
-  justify-content: space-between;
-  padding: 1rem;
+.smallIcon {
+  width: 25px;
+  cursor: pointer;
+  color: black;
 }
