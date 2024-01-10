@@ -11,7 +11,7 @@ export const login = async (email: string, password: string) => {
     console.log(JSON.stringify(response));
     return response
   } catch (err) {
-    if (!err?.response) {
+    if (!err) {
       return 'Error'
   }
 }};

@@ -10,6 +10,7 @@ function Login(props: AuthProps) {
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
+    console.log('login')
     login(formInputs.email, formInputs.password)
   }
 
