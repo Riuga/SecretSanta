@@ -20,33 +20,35 @@ function CreateRoom() {
 
   return (
     <>
-      <Header title="CREATE ROOM" username="Riuga" />
-      <form className="create-form" onSubmit={handleSubmit}>
+      <Header title='CREATE ROOM' username='Riuga' />
+      <form className='create-form' onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="roomName"
-          id="room-name"
+          type='text'
+          name='roomName'
+          id='room-name'
           value={formInputs.roomName}
-          placeholder="Enter room name"
+          placeholder='Enter room name'
           onChange={handleChange}
         ></input>
         <input
-          type="text"
-          name="wishes"
-          id="wishes"
+          type='text'
+          name='wishes'
+          id='wishes'
           value={formInputs.wishes}
-          placeholder="Enter your wishes"
+          placeholder='Enter your wishes'
           onChange={handleChange}
         ></input>
         <input
-          type="number"
-          name="price"
-          id="price"
+          type='number'
+          name='price'
+          id='price'
           value={formInputs.price}
-          placeholder="Enter gift price"
+          placeholder='Enter gift price'
           onChange={handleChange}
         ></input>
-        <button type="submit" className='btn'>Create room</button>
+        <button type='submit' className='btn'>
+          Create room
+        </button>
       </form>
     </>
   )

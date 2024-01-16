@@ -19,25 +19,25 @@ function JoinRoom() {
 
   return (
     <>
-      <Header title="JOIN ROOM" username="" />
-      <form className="create-form" onSubmit={handleSubmit}>
+      <Header title='JOIN ROOM' username='' />
+      <form className='create-form' onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="id"
-          id="id"
+          type='text'
+          name='id'
+          id='id'
           value={formInputs.id}
-          placeholder="Enter room ID"
+          placeholder='Enter room ID'
           onChange={handleChange}
         ></input>
         <input
-          type="text"
-          name="wishes"
-          id="wishes"
+          type='text'
+          name='wishes'
+          id='wishes'
           value={formInputs.wishes}
-          placeholder="Enter your wishes"
+          placeholder='Enter your wishes'
           onChange={handleChange}
         ></input>
-        <button type="submit" className="btn">
+        <button type='submit' className='btn'>
           Join room
         </button>
       </form>

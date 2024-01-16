@@ -1,5 +1,5 @@
 import TrashIcon from '../assets/TrashIcon'
-import { RoomProps } from '../utils/interfaces'
+import { RoomProps } from '../utils/types'
 
 function Room(props: RoomProps) {
   return (

@@ -7,9 +7,9 @@ import { JoinIcon } from '../assets/JoinIcon'
 function RoomsList() {
   return (
     <>
-      <Header title="ROOMS LIST" username="" />
+      <Header title='ROOMS LIST' username='' />
       <div>
-        <Link to={'/create'} >
+        <Link to={'/create'}>
           <CreateIcon />
         </Link>
         <Link to={'/join'}>
