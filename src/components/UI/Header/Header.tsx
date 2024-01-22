@@ -13,7 +13,9 @@ function Header(props: HeaderProps) {
       </Link>
       <h1>{props.title}</h1>
       <p>User: {props.username}</p>
-      <button onClick={() => signout()}><LogoutIcon /></button>
+      <button style={{ background: 'none' }} onClick={() => signout()}>
+        <LogoutIcon />
+      </button>
     </header>
   )
 }
