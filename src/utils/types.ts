@@ -1,7 +1,3 @@
-export type AuthProps = {
-  onFormSwitch: (formName: string) => void
-}
-
 export type HeaderProps = {
   title: string
   username: string
