@@ -27,6 +27,7 @@ export const login = async (request: LoginRequest) => {
       setAccessToken(data.access_token)
       setRefreshToken(data.refresh_token)
       console.log(data)
+      window.location.href = '/list'
     })
     .catch((reason) => {
       console.log(reason)
@@ -38,6 +39,7 @@ export const signup = async (request: SignupRequest) => {
     .then((data) => {
       setAccessToken(data.access_token)
       setRefreshToken(data.refresh_token)
+      window.location.href = '/login'
     })
     .catch((reason) => {
       console.log(reason)

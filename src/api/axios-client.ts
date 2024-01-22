@@ -3,9 +3,8 @@ import { nanoid } from 'nanoid'
 import { getAccessToken } from './token-storage'
 import { useRefresh } from './refresh'
 
-
 export const client = axios.create({
-  baseURL: 'https://api.santa.kheynov.ru/',
+  baseURL: 'https://api.riuga.ru',
 })
 
 client.interceptors.request.use(async (request) => {

@@ -1,17 +1,25 @@
 import { FormEventHandler, useState } from 'react'
 import '../styles/Auth.css'
 import { Link } from 'react-router-dom'
+import { signup } from '../api/AuthService'
 
 function Signup() {
   const [formInputs, setFormInputs] = useState({
     email: '',
-    username: '',
     password: '',
     confirmPassword: '',
+    username: '',
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
+    if (formInputs.password === formInputs.confirmPassword) {
+      signup({
+        email: formInputs.email,
+        password: formInputs.password,
+        username: formInputs.username,
+      })
+    }
   }
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
