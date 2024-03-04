@@ -1,4 +1,9 @@
-import { AuthResponse, LoginRequest, SignupRequest } from '../utils/types.ts'
+import {
+  AuthResponse,
+  LoginRequest,
+  SignupRequest,
+  UserData,
+} from '../utils/types.ts'
 import { client } from './axios-client.ts'
 import {
   clearAccessToken,
@@ -51,4 +56,14 @@ export const signout = (navigate = true) => {
   clearRefreshToken()
   console.log('sign out')
   if (navigate) window.location.href = '/login'
+}
+
+export const fetchSelfData = async () => {
+  const res = await client.get<UserData>('/api/v1/user')
+  return res.data
+}
+
+export const getSelfId = async (): Promise<string> => {
+  const res = await fetchSelfData()
+  return res.user_id
 }
