@@ -1,16 +1,24 @@
 import { FormEventHandler, useState } from 'react'
 import Header from '../components/UI/Header/Header'
+import { createRoomRequest } from '../api/GameService.ts'
 import '../styles/RoomForms.css'
 
 function CreateRoom() {
   const [formInputs, setFormInputs] = useState({
-    roomName: '',
-    wishes: '',
-    price: 0,
+    room_name: '',
+    playable_owner: true,
+    wishlist: undefined,
+    max_price: undefined,
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
+    createRoomRequest(formInputs)
+      .then((data) => {
+        console.log(data)
+        window.location.href = '/list'
+      })
+      .catch(console.log)
   }
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -20,30 +28,30 @@ function CreateRoom() {
 
   return (
     <>
-      <Header title='CREATE ROOM' username='Riuga' />
+      <Header title='CREATE ROOM' />
       <form className='create-form' onSubmit={handleSubmit}>
         <input
           type='text'
-          name='roomName'
+          name='room_name'
           id='room-name'
-          value={formInputs.roomName}
+          value={formInputs.room_name}
           placeholder='Enter room name'
           onChange={handleChange}
         ></input>
         <input
           type='text'
-          name='wishes'
+          name='wishlist'
           id='wishes'
-          value={formInputs.wishes}
+          value={formInputs.wishlist}
           placeholder='Enter your wishes'
           onChange={handleChange}
         ></input>
         <input
           type='number'
-          name='price'
+          name='max_price'
           id='price'
-          value={formInputs.price}
-          placeholder='Enter gift price'
+          value={formInputs.max_price}
+          placeholder='Enter gift price (optional)'
           onChange={handleChange}
         ></input>
         <button type='submit' className='btn'>

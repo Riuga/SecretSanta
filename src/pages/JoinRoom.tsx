@@ -1,15 +1,22 @@
 import { FormEventHandler, useState } from 'react'
 import Header from '../components/UI/Header/Header'
+import { joinRoomRequest } from '../api/GameService.ts'
 import '../styles/RoomForms.css'
 
 function JoinRoom() {
   const [formInputs, setFormInputs] = useState({
-    id: '',
-    wishes: '',
+    room_id: '',
+    wishes: undefined,
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
+    joinRoomRequest(formInputs)
+      .then((data) => {
+        console.log(data)
+        window.location.href = '/list'
+      })
+      .catch(console.log)
   }
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -19,13 +26,13 @@ function JoinRoom() {
 
   return (
     <>
-      <Header title='JOIN ROOM' username='' />
+      <Header title='JOIN ROOM' />
       <form className='create-form' onSubmit={handleSubmit}>
         <input
           type='text'
-          name='id'
-          id='id'
-          value={formInputs.id}
+          name='room_id'
+          id='room_id'
+          value={formInputs.room_id}
           placeholder='Enter room ID'
           onChange={handleChange}
         ></input>
