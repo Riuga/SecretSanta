@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import TrashIcon from '../assets/TrashIcon'
 import Header from './UI/Header/Header'
-import { RoomDetailsModel, RoomProps } from '../utils/types'
+import { RoomDetailsModel } from '../utils/types'
 import {
   acceptUserRequest,
   deleteRoomRequest,
@@ -12,31 +12,36 @@ import {
 import { isExists } from '../utils/functions'
 import { getSelfId } from '../api/AuthService'
 import UsersListItem from './UsersListItem'
+import { useParams } from 'react-router-dom'
 
-function Room(props: RoomProps) {
+function Room() {
   const [room, setRoom] = useState<RoomDetailsModel>()
-
+  const { roomID } = useParams()
   const isGameStarted = useRef(false)
   const isAdmin = useRef(false)
   const selfUserID = useRef<string>()
+  const avoidInfiniteLoop = true
 
   const fetchDetails = () => {
-    fetchRoomDetails(props.id)
-      .then((data) => {
-        isGameStarted.current = isExists(data.recipient)
-        getSelfId().then((id) => {
-          selfUserID.current = id
-          console.log(`Self id set to: ${selfUserID.current}`)
-          if (id === data.owner_id) {
-            isAdmin.current = true
-          }
+    if (roomID !== undefined) {
+      fetchRoomDetails(roomID)
+        .then((data) => {
+          isGameStarted.current = isExists(data.recipient)
+          getSelfId().then((id) => {
+            selfUserID.current = id
+            console.log(`Self id set to: ${selfUserID.current}`)
+            if (id === data.owner_id) {
+              isAdmin.current = true
+            }
+          })
+          setRoom(data)
         })
-        setRoom(data)
-      })
-      .catch(console.log)
+        .catch(console.log)
+    }
   }
 
-  useEffect(() => fetchDetails())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => fetchDetails(), [avoidInfiniteLoop])
 
   const checkSelfId = (id: string) => id !== selfUserID.current
 
@@ -114,7 +119,7 @@ function Room(props: RoomProps) {
           <TrashIcon />
         </button>
       </div>
-      <p>Room ID: {props.id}</p>
+      <p>Room ID: {roomID}</p>
       <p>Price: {room?.max_price}</p>
       {getRecipient() && <p>Send a gift to: {getRecipient()}</p>}
       {isAdmin.current && (
