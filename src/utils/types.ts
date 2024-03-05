@@ -11,8 +11,6 @@ export type ULItemProps = {
   kick: () => void | undefined
 }
 
-export type RoomProps = { id: string }
-
 export type RLItemProps = {
   room: RoomModel
 }
