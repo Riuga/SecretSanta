@@ -28,7 +28,7 @@ const AppRouter = createBrowserRouter([
     element: <RequireAuth />,
     children: [
       {
-        path: '/list',
+        path: '',
         element: <RoomsList />,
       },
     ],
@@ -38,7 +38,7 @@ const AppRouter = createBrowserRouter([
     element: <RequireAuth />,
     children: [
       {
-        path: '/join',
+        path: '',
         element: <JoinRoom />,
       },
     ],
@@ -48,7 +48,7 @@ const AppRouter = createBrowserRouter([
     element: <RequireAuth />,
     children: [
       {
-        path: '/create',
+        path: '',
         element: <CreateRoom />,
       },
     ],
@@ -58,8 +58,8 @@ const AppRouter = createBrowserRouter([
     element: <RequireAuth />,
     children: [
       {
-        path: '/room/:roomID',
-        element: <Room id={''} />,
+        path: '',
+        element: <Room />,
       },
     ],
   },
