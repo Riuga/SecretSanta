@@ -13,6 +13,10 @@ export type ULItemProps = {
 
 export type RoomProps = { id: string }
 
+export type RLItemProps = {
+  room: RoomModel
+}
+
 // Auth
 
 export type LoginRequest = {
