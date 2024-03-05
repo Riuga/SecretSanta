@@ -7,6 +7,7 @@ import RoomsList from './pages/RoomsList'
 import JoinRoom from './pages/JoinRoom'
 import CreateRoom from './pages/CreateRoom'
 import RequireAuth from './components/RequireAuth'
+import Room from './components/Room'
 
 const AppRouter = createBrowserRouter([
   {
@@ -49,6 +50,16 @@ const AppRouter = createBrowserRouter([
       {
         path: '/create',
         element: <CreateRoom />,
+      },
+    ],
+  },
+  {
+    path: '/room/:roomID',
+    element: <RequireAuth />,
+    children: [
+      {
+        path: '/room/:roomID',
+        element: <Room id={''} />,
       },
     ],
   },
