@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-import { 
-  AuthResponse, 
-  LoginRequest, 
-  SignupRequest, 
-  UserData 
-} from '../utils/types.ts'
-=======
 import {
   AuthResponse,
   LoginRequest,
   SignupRequest,
   UserData,
 } from '../utils/types.ts'
->>>>>>> c2e5e7bf4a31dc3770c128d136d8c4f6d0187a52
+
 import { client } from './axios-client.ts'
 import {
   clearAccessToken,
