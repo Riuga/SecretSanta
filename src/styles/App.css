@@ -1,3 +1,9 @@
+/* 1. Red: #ff0000
+2. Green: #008000
+3. Gold: #ffd700
+4. Silver: #c0c0c0
+5. White: #ffffff */
+
 #root {
   text-align: center;
   display: flex;
@@ -24,7 +30,20 @@ button {
   padding: 20px;
   cursor: pointer;
   margin: 5px;
-  background-color: aliceblue;
+  background-color: rgb(181, 212, 240);
   text-decoration: none;
   color: black;
+  font-family: 'KodeMono';
+}
+
+.green {
+  background-color: #008000;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.yellow {
+  background-color: #ffd700;
 }

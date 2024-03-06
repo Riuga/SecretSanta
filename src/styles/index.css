@@ -4,12 +4,21 @@
 }
 
 body {
-  background-color: #c9baa6;
-  color: #111519;
+  background-color: #fff;
 }
 
 @font-face {
-  font-family: 'BeyondWonderland';
-  src: local('BeyondWonderland'),
-    url('public/fonts/ThriveXmas') format('truetype');
+  font-family: 'ThriveXmas';
+  src: local('ThriveXmas'),
+    url('/fonts/ThriveXmas/ThriveXmas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'KodeMono';
+  src: local('KodeMono'), url('/fonts/KodeMono/KodeMono.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MadmiOne';
+  src: url('/fonts/MadmiOne/MadmiOne.ttf') format('truetype');
 }
