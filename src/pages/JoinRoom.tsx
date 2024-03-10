@@ -6,7 +6,7 @@ import '../styles/RoomForms.css'
 function JoinRoom() {
   const [formInputs, setFormInputs] = useState({
     room_id: '',
-    wishes: undefined,
+    wishlist: '',
   })
 
   const handleSubmit: FormEventHandler = (e) => {
@@ -38,9 +38,9 @@ function JoinRoom() {
         ></input>
         <input
           type='text'
-          name='wishes'
-          id='wishes'
-          value={formInputs.wishes}
+          name='wishlist'
+          id='wishlist'
+          value={formInputs.wishlist}
           placeholder='Enter your wishes'
           onChange={handleChange}
         ></input>
