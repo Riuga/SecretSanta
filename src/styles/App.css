@@ -22,6 +22,7 @@ input {
 button {
   cursor: pointer;
   border: none;
+  background: none;
 }
 
 .btn {
@@ -30,10 +31,19 @@ button {
   padding: 20px;
   cursor: pointer;
   margin: 5px;
-  background-color: rgb(181, 212, 240);
+  background-color: #a0c7fa;
   text-decoration: none;
   color: black;
   font-family: 'KodeMono';
+}
+
+.icon {
+  width: 50px;
+  cursor: pointer;
+  padding: 15px;
+  color: black;
+  display: block;
+  background: none;
 }
 
 .green {
@@ -46,4 +56,8 @@ button {
 
 .yellow {
   color: #ffd700;
+}
+
+p {
+  padding: 5px;
 }

@@ -7,17 +7,6 @@ header {
   align-items: center;
 }
 
-.icon {
-  width: 50px;
-  cursor: pointer;
-  padding: 15px;
-  color: black;
-}
-
-h1 {
-  padding: 15px;
-}
-
-p {
+.title {
   padding: 15px;
 }

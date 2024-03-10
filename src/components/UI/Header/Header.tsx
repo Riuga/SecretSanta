@@ -22,7 +22,7 @@ function Header(props: HeaderProps) {
       <Link to='/list'>
         <HomeIcon />
       </Link>
-      <h1>{props.title}</h1>
+      <h1 className='title'>{props.title}</h1>
       <p>User: {username}</p>
       <button style={{ background: 'none' }} onClick={() => signout()}>
         <LogoutIcon />

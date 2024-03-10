@@ -1,0 +1,50 @@
+.room-action-btn {
+  border: 1px solid;
+  padding: 5px;
+  font-family: 'KodeMono';
+  margin: 5px;
+}
+
+.room-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-family: 'ThriveXmas';
+}
+
+.room-info {
+  padding: 5px;
+  width: 100%;
+  background-color: #f3f3f3;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.player {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #f3f3f3;
+}
+
+.copyIcon {
+  width: 16px;
+  display: block;
+  padding-left: 5px;
+}
+
+.room-id {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.players {
+  padding: 5px;
+  width: 100%;
+}

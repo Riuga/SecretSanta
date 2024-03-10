@@ -34,7 +34,11 @@ function RoomsList() {
   if (rooms.length > 0) {
     for (const room of rooms) {
       roomsList.push(
-        <Link className='room-item' key={room.room_id} to={`/room/${room.room_id}`}>
+        <Link
+          className='room-item'
+          key={room.room_id}
+          to={`/room/${room.room_id}`}
+        >
           <RoomsListItem key={room.room_id} room={room} />
         </Link>
       )
@@ -44,7 +48,9 @@ function RoomsList() {
   return (
     <>
       <Header title='ROOMS LIST' />
-      <div>
+      {roomsList}
+      <div className='room-btns'>
+        <h2 className='new-room-heading'>New room</h2>
         <Link to={'/create'}>
           <CreateIcon />
         </Link>
@@ -52,7 +58,6 @@ function RoomsList() {
           <JoinIcon />
         </Link>
       </div>
-      {roomsList}
     </>
   )
 }
