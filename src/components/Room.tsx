@@ -13,6 +13,8 @@ import { isExists } from '../utils/functions'
 import { getSelfId } from '../api/AuthService'
 import UsersListItem from './UsersListItem'
 import { useParams } from 'react-router-dom'
+import '../styles/Room.css'
+import CopyIcon from '../assets/CopyIcon'
 
 function Room() {
   const [room, setRoom] = useState<RoomDetailsModel>()
@@ -27,14 +29,17 @@ function Room() {
       fetchRoomDetails(roomID)
         .then((data) => {
           isGameStarted.current = isExists(data.recipient)
-          getSelfId().then((id) => {
-            selfUserID.current = id
-            console.log(`Self id set to: ${selfUserID.current}`)
-            if (id === data.owner_id) {
-              isAdmin.current = true
-            }
-          })
-          setRoom(data)
+          getSelfId()
+            .then((id) => {
+              selfUserID.current = id
+              console.log(`Self id set to: ${selfUserID.current}`)
+              if (id === data.owner_id) {
+                isAdmin.current = true
+              }
+            })
+            .then(() => {
+              setRoom(data)
+            })
         })
         .catch(console.log)
     }
@@ -100,8 +105,11 @@ function Room() {
         <UsersListItem
           key={user.user_id}
           user={user}
-          hasAcceptButton={isAdmin && user.accepted!}
-          hasKickButton={isAdmin && user.accepted && checkSelfId(user.user_id)}
+          isAdmin={user.user_id === room.owner_id}
+          hasAcceptButton={isAdmin.current && !user.accepted}
+          hasKickButton={
+            isAdmin.current && user.accepted && checkSelfId(user.user_id)
+          }
           accept={() => acceptUser(user.user_id)}
           decline={() => kickUser(user.user_id)}
           kick={() => kickUser(user.user_id)}
@@ -112,23 +120,43 @@ function Room() {
 
   return (
     <>
-      <Header title='' />
-      <div>
-        <h2>{room?.room_name || 'Room'}</h2>
-        <button onClick={deleteRoom}>
-          <TrashIcon />
-        </button>
+      <Header title={`Room`} />
+      <div className='room-info'>
+        <div className='room-header'>
+          <h2>{room?.room_name || 'Room'}</h2>
+          {isAdmin.current && (
+            <button onClick={deleteRoom}>
+              <TrashIcon />
+            </button>
+          )}
+        </div>
+        <p className='room-id'>
+          <b>Room ID:</b> {`\xa0${roomID}`}{' '}
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText(`${roomID}`)
+            }}
+          >
+            <CopyIcon />
+          </button>
+        </p>
+        <p>
+          <b>Price: </b> {room?.max_price}
+        </p>
+        {getRecipient() && <p>Send a gift to: {getRecipient()}</p>}
+        {isAdmin.current && (
+          <button
+            className={`${gameButton.className} room-action-btn`}
+            onClick={changeGameState}
+          >
+            {gameButton.text}
+          </button>
+        )}
       </div>
-      <p>Room ID: {roomID}</p>
-      <p>Price: {room?.max_price}</p>
-      {getRecipient() && <p>Send a gift to: {getRecipient()}</p>}
-      {isAdmin.current && (
-        <button className={gameButton.className} onClick={changeGameState}>
-          {gameButton.text}
-        </button>
-      )}
-      <h3>Players: </h3>
-      {userList}
+      <div className='players'>
+        <h3>Players: </h3>
+        {userList}
+      </div>
     </>
   )
 }

@@ -6,6 +6,7 @@ export type ULItemProps = {
   user: UserRoomInfo
   hasAcceptButton: boolean
   hasKickButton: boolean
+  isAdmin: boolean
   accept: () => void | undefined
   decline: () => void | undefined
   kick: () => void | undefined
