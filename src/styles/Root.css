@@ -1,0 +1,10 @@
+.root-page {
+    margin: auto 0;
+    padding: 15px;
+    width: 100%;
+    font-family: 'ThriveXmas';
+    font-size: clamp(14px, 2vw, 36px);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
