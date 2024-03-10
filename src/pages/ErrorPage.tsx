@@ -6,10 +6,10 @@ export default function ErrorPage() {
   console.error(error)
 
   return (
-    <div id='error-page'>
-      <h1>Oops!</h1>
+    <div className='error-page'>
+      <h1 className='red'>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
-      <p>
+      <p className='red'>
         <i>{(error as Error)?.message ||
             (error as { statusText?: string })?.statusText}</i>
       </p>
