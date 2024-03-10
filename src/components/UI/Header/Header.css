@@ -4,6 +4,7 @@ header {
   justify-content: space-between;
   padding: 15px;
   font-family: 'ThriveXmas';
+  align-items: center;
 }
 
 .icon {

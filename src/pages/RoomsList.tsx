@@ -34,7 +34,7 @@ function RoomsList() {
   if (rooms.length > 0) {
     for (const room of rooms) {
       roomsList.push(
-        <Link key={room.room_id} to={`/room/${room.room_id}`}>
+        <Link className='room-item' key={room.room_id} to={`/room/${room.room_id}`}>
           <RoomsListItem key={room.room_id} room={room} />
         </Link>
       )

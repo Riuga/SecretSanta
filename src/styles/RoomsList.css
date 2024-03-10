@@ -3,3 +3,13 @@
   cursor: pointer;
   color: black;
 }
+
+.room-item {
+  text-decoration: none;
+  font-family: 'MadmiOne';
+  color: black;
+}
+
+.room-name {
+  font-size: 1000;
+}

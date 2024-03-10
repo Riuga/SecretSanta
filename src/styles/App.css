@@ -37,13 +37,13 @@ button {
 }
 
 .green {
-  background-color: #008000;
+  color: #008000;
 }
 
 .red {
-  background-color: #ff0000;
+  color: #ff0000;
 }
 
 .yellow {
-  background-color: #ffd700;
+  color: #ffd700;
 }
